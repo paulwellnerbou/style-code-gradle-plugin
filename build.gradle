@@ -1,6 +1,25 @@
 apply plugin: 'groovy'
+apply plugin: 'maven'
 
 dependencies {
+    repositories {
+        maven {
+            url uri('../repo')
+            jcenter()
+        }
+    }
     compile gradleApi()
     compile localGroovy()
+    compile 'de.wellnerbou:stylecode:0.1-SNAPSHOT'
+}
+
+group = 'de.wellnerbou'
+version = '0.1-SNAPSHOT'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: uri('../repo'))
+        }
+    }
 }
