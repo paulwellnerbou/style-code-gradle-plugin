@@ -26,7 +26,7 @@ class StyleCodePlugin implements Plugin<Project> {
             if(project.stylecode.indexTemplate != null) {
                 sb.withIndexHtmlTemplate(project.stylecode.indexTemplate)
             }
-            sb.build().generate(project.stylecode.outputDirectory == null?project.buildDir.absolutePath+"/styledoc/":project.stylecode.outputDirectory);
+            sb.build().generate(project.stylecode.outputDirectory == null?project.buildDir.absolutePath+"/stylecode/":project.stylecode.outputDirectory);
         }
     }
 }
